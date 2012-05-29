@@ -1,0 +1,49 @@
+#!/usr/bin/env ruby
+
+require 'processme'
+require 'optparse'
+require 'shellwords'
+
+builder =  ProcessMe::Builder.new
+
+OptionParser.new do |opts|
+  opts.summary_width = 28
+  opts.banner = "Usage: processme [options]"
+
+  def opts.show_usage
+    puts self
+    exit 1
+  end
+
+  opts.on("-c", "--compile", "Compile the entire source structure") do |name|
+	builder.build
+  end
+
+  opts.on("-w", "--watch", "Perform an initial compile and then monitor for changes to compile automatically") do |directory|
+	builder.watch
+  end
+
+  opts.on("-n PROJECT_NAME", "--create PROJECT_NAME", "Copy the project template into PROJECT_NAME") do |name|
+
+  end
+
+  opts.on_tail("-h", "--help", "Shows this help message") do
+    opts.show_usage
+  end
+
+  opts.on_tail("-v", "--version", "Shows version") do
+    puts ProcessMe::VERSION
+    exit
+  end
+
+  opts.show_usage if ARGV.empty?
+
+  begin
+    opts.order(ARGV) do |filename|
+      filenames << File.expand_path(filename)
+    end
+  rescue OptionParser::ParseError => e
+    opts.warn e.message
+    opts.show_usage
+  end
+end

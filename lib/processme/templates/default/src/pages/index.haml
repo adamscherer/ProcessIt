@@ -1,0 +1,19 @@
+!!! 5
+
+//= require include.js
+
+<!--= require "header.html"
+
+<%= require_asset "header.html" %>
+
+-# = partial("include.js")
+%one
+  %two
+    %three Hey there
+	
+-# = list_of(["Home", "About", "Contact", "FAQ"], {class: "nav", role: "nav"}) do |item| %a{ href="#" }= item
+
+= list_of([['hello'], ['yall']]) do |i|
+  = i[0]
+
+<div>I got lazy here</div>
