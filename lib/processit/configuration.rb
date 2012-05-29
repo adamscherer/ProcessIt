@@ -1,4 +1,4 @@
-module ProcessMe
+module ProcessIt
   class Configuration
     attr_accessor :preview_server_port
 

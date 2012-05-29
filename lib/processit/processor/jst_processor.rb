@@ -1,6 +1,6 @@
 require 'tilt'
 
-module ProcessMe
+module ProcessIt
   class JstProcessor < Tilt::Template
     def self.default_mime_type
       'application/javascript'

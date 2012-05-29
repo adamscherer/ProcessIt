@@ -1,4 +1,4 @@
-module ProcessMe  
+module ProcessIt  
   class Base
     
     include StaticMatic::RenderMixin

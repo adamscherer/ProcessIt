@@ -1,6 +1,6 @@
 require 'tilt'
 
-module ProcessMe
+module ProcessIt
   # Some browsers have issues with stylesheets that contain multiple
   # `@charset` definitions. The issue surfaces while using Sass since
   # it inserts a `@charset` at the top of each file. Then Sprockets

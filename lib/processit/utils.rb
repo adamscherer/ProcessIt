@@ -1,4 +1,4 @@
-module ProcessMe
+module ProcessIt
   # `Utils`, we didn't know where else to put it!
   module Utils
     # If theres encoding support (aka Ruby 1.9)

@@ -1,16 +1,16 @@
-# ProcessIt
+<h1>ProcessMe</h1>
 
-## Resources
+<h2>Resources</h2>
 
-* [ProcessMe Homepage](http://process-it.org/)
-* [Installing ProcessMe](http://process-it.org/install/)
-* [ProcessMe Reference](http://process-it.org/install/reference/)
+* [ProcessMe Homepage](http://process-me.org/)
+* [Installing ProcessMe](http://process-me.org/install/)
+* [ProcessMe Reference](http://process-me.org/install/reference/)
 
-## Author
+<h2>Author</h2>
 ProcessMe is written by [Adam Scherer][adam@annconia.com].<br>
 Adam is a Software Architect who likes everything simple.
 
-## License
+<h2>License</h2>
 Copyright (c) 2012 Adam Scherer<br>
 All Rights Reserved.<br>
 Released under a [slightly modified MIT License][license].

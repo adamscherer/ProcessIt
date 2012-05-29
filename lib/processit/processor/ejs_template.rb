@@ -1,6 +1,6 @@
 require 'tilt'
 
-module ProcessMe
+module ProcessIt
   # Tilt engine class for the EJS compiler. Depends on the `ejs` gem.
   #
   # For more infomation see:

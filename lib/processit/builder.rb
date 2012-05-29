@@ -5,7 +5,7 @@ require 'tilt'
 require 'haml'
 require 'fileutils'
 
-module ProcessMe
+module ProcessIt
 	class Builder
 
 		def initialize(root = ".")

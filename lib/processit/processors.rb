@@ -1,6 +1,4 @@
-require 'sprockets/utils'
-
-module ProcessMe
+module ProcessIt
 
 	class Processors
 

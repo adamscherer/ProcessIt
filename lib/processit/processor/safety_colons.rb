@@ -1,6 +1,6 @@
 require 'tilt'
 
-module ProcessMe
+module ProcessIt
   # For JS developers who are colonfobic, concatenating JS files using
   # the module pattern usually leads to syntax errors.
   #

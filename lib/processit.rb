@@ -1,17 +1,17 @@
-require 'processme/version'
+require 'processit/version'
 
 
-module ProcessMe
+module ProcessIt
 
-	autoload :EjsTemplate,             "processme/processor/ejs_template"
-	autoload :JstProcessor,            "processme/processor/jst_processor"
-	autoload :JsMinTemplate,           "processme/processor/jsmin_template"
-	autoload :CharsetNormalizer,	   "processme/processor/charset_normalizer"
-	autoload :SafetyColons,		       "processme/processor/safety_colons"
-	autoload :Utils,                   "processme/utils"
+	autoload :EjsTemplate,             "processit/processor/ejs_template"
+	autoload :JstProcessor,            "processit/processor/jst_processor"
+	autoload :JsMinTemplate,           "processit/processor/jsmin_template"
+	autoload :CharsetNormalizer,	   "processit/processor/charset_normalizer"
+	autoload :SafetyColons,		       "processit/processor/safety_colons"
+	autoload :Utils,                   "processit/utils"
 
-	require 'processme/processors'
-	require 'processme/builder'
+	require 'processit/processors'
+	require 'processit/builder'
 
 	Processors.instance.register_processor '.js', 'js', [Tilt::ERBTemplate, SafetyColons, JsMinTemplate]
 	Processors.instance.register_processor '.jst', 'js', [Tilt::ERBTemplate, EjsTemplate]

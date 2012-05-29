@@ -4,11 +4,11 @@ require 'processme'
 require 'optparse'
 require 'shellwords'
 
-builder =  ProcessMe::Builder.new
+builder =  ProcessIt::Builder.new
 
 OptionParser.new do |opts|
   opts.summary_width = 28
-  opts.banner = "Usage: processme [options]"
+  opts.banner = "Usage: processit [options]"
 
   def opts.show_usage
     puts self
@@ -32,7 +32,7 @@ OptionParser.new do |opts|
   end
 
   opts.on_tail("-v", "--version", "Shows version") do
-    puts ProcessMe::VERSION
+    puts ProcessIt::VERSION
     exit
   end
 

@@ -1,4 +1,4 @@
-module ProcessMe::Setup
+module ProcessIt::Setup
   
   def setup
     Dir.mkdir(@base_dir) unless File.exists?(@base_dir)

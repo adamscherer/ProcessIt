@@ -5,7 +5,7 @@ require 'sprockets/utils'
 require 'pathname'
 require 'set'
 
-module ProcessMe
+module ProcessIt
   # `Context` provides helper methods to all `Tilt` processors. They
   # are typically accessed by ERB templates. You can mix in custom
   # helpers by injecting them into `Environment#context_class`. Do not

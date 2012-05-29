@@ -1,6 +1,6 @@
 require 'tilt'
 
-module ProcessMe
+module ProcessIt
   # Tilt engine class for the JSMin compiler. Depends on the `jsmin` gem.
   #
   # For more infomation see:
