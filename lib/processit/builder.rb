@@ -1,8 +1,5 @@
-require 'processme/utils'
-require 'processme/processors'
-require 'ejs'
-require 'tilt'
-require 'haml'
+require 'processit/utils'
+require 'processit/processors'
 require 'fileutils'
 
 module ProcessIt
@@ -39,7 +36,7 @@ module ProcessIt
 		end
 		
 		def build
-			puts ">>> ProcessMe is building your site." 
+			puts ">>> ProcessIt is building your site." 
 			Dir["#{@src_dir}/**/*"].each do |path|
 				next if File.basename(path) =~ /^\_/  or File.directory?(path) # skip partials and directories
 
@@ -49,11 +46,12 @@ module ProcessIt
 
 		def evaluate(path, options = {})
 			ext = File.extname(path)
-			result = ProcessMe::Utils.read_unicode(path)
+			path = File.absolute_path(path, @src_dir)
+			result = ProcessIt::Utils.read_unicode(path)
 			Processors.instance.processor(ext)["klasses"].each do |processor|
 				begin
 				  template = processor.new(path) { result }
-				  result = template.render(self, {:name => "ME"})
+				  result = template.render(self, {:name => "Adam"})
 				rescue Exception => e
 				  puts e
 				  raise
@@ -61,6 +59,10 @@ module ProcessIt
 			end
 
 			result
+		end
+		
+		def cms() 
+		
 		end
 
 		def copy_file(from, to)

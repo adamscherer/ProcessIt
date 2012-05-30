@@ -22,7 +22,7 @@ module ProcessIt
 
 		def processor(ext = nil)
 		  if ext
-			ext = ProcessMe::Utils.normalize_extension(ext)
+			ext = ProcessIt::Utils.normalize_extension(ext)
 			processor = @processors[ext]
 			if (processor)
 				return processor
@@ -46,16 +46,11 @@ module ProcessIt
 		#     environment.register_engine '.coffee', CoffeeScriptTemplate
 		#
 		def register_processor(ext, output_ext, klasses = [])
-		  ext = ProcessMe::Utils.normalize_extension(ext)
+		  ext = ProcessIt::Utils.normalize_extension(ext)
 		  @processors[ext] = {"output_ext" => output_ext, "klasses" => klasses}
 		end
 
 		private
-		  def deep_copy_hash(hash)
-			initial = Hash.new { |h, k| h[k] = [] }
-			hash.inject(initial) { |h, (k, a)| h[k] = a.dup; h }
-		  end
-		  
 		  private_class_method :new
 	end
 end

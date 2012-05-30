@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'processme'
+require 'processit'
 require 'optparse'
 require 'shellwords'
 
