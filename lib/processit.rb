@@ -14,6 +14,7 @@ module ProcessIt
 	require 'processit/builder'
 	require 'tilt'
 	require 'haml'
+	require 'yaml'
 
 	Processors.instance.register_processor '.js', 'js', [Tilt::ERBTemplate, SafetyColons, JsMinTemplate]
 	Processors.instance.register_processor '.jst', 'js', [Tilt::ERBTemplate, EjsTemplate]

@@ -10,6 +10,8 @@ module ProcessIt
 			@src_dir = File.join(@base_dir, "src")
 			@site_dir = File.join(@base_dir, "site")
 			@html_src_dir = File.join(@src_dir, "pages")
+			
+			@config = YAML.load_file("#{@src_dir}/data/data.yml")
 		end
 
 		def watch
@@ -51,7 +53,7 @@ module ProcessIt
 			Processors.instance.processor(ext)["klasses"].each do |processor|
 				begin
 				  template = processor.new(path) { result }
-				  result = template.render(self, {:name => "Adam"})
+				  result = template.render(self, @config)
 				rescue Exception => e
 				  puts e
 				  raise
